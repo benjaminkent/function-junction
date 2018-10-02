@@ -17,23 +17,30 @@ const max = (a, b) => {
  * numbers as arguments and returns the largest of them.
  */
 
-const maxOfThree = (a, b, c) => {
-  return Math.max(a, b, c)
-}
+// const maxOfThree = (a, b, c) => {}
 
 /*
  * Define a function sum() that takes two numbers as
  * arguments and computes the sum of those two numbers.
  */
 
-// ...
+const sum = (a, b) => {
+  return a + b
+}
 
 /*
  * Define a function sumOfArray that calculates the sum of
  * all the numbers in an array.
  */
 
-// ...
+const sumOfArray = array => {
+  let initialValue = 0
+  let sum = array.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    initialValue
+  )
+  return sum
+}
 
 /**
  * Write a function isVowel() that takes a character (i.e. a string of length 1)
@@ -88,14 +95,14 @@ test('max()', t => {
   t.true(isNaN(max('aaa', 'bbb')))
 })
 
-test('maxOfThree()', t => {
-  t.is(maxOfThree(1, 3, 2), 3)
-  t.is(maxOfThree(0, 3, -1), 3)
-  t.is(maxOfThree(10, 3, 50), 50)
-  t.is(maxOfThree(-1, -3, -10), -1)
-  t.is(maxOfThree('aaa', 0, 1), 1)
-  t.true(isNaN(maxOfThree('aaa', 'bbb', 'ccc')))
-})
+// test('maxOfThree()', t => {
+//   t.is(maxOfThree(1, 3, 2), 3)
+//   t.is(maxOfThree(0, 3, -1), 3)
+//   t.is(maxOfThree(10, 3, 50), 50)
+//   t.is(maxOfThree(-1, -3, -10), -1)
+//   t.is(maxOfThree('aaa', 0, 1), 1)
+//   t.true(isNaN(maxOfThree('aaa', 'bbb', 'ccc')))
+// })
 
 test('sum()', t => {
   t.is(sum(8, 11), 19)
