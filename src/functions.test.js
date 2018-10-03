@@ -17,7 +17,17 @@ const max = (a, b) => {
  * numbers as arguments and returns the largest of them.
  */
 
-// const maxOfThree = (a, b, c) => {}
+const maxOfThree = (a, b, c) => {
+  if (a > b && a > c) {
+    return a
+  }
+  if (b > a && b > c) {
+    return b
+  }
+  if (c > a && c > b) {
+    return c
+  }
+}
 
 /*
  * Define a function sum() that takes two numbers as
@@ -116,14 +126,14 @@ test('max()', t => {
   t.true(isNaN(max('aaa', 'bbb')))
 })
 
-// test('maxOfThree()', t => {
-//   t.is(maxOfThree(1, 3, 2), 3)
-//   t.is(maxOfThree(0, 3, -1), 3)
-//   t.is(maxOfThree(10, 3, 50), 50)
-//   t.is(maxOfThree(-1, -3, -10), -1)
-//   t.is(maxOfThree('aaa', 0, 1), 1)
-//   t.true(isNaN(maxOfThree('aaa', 'bbb', 'ccc')))
-// })
+test('maxOfThree()', t => {
+  t.is(maxOfThree(1, 3, 2), 3)
+  t.is(maxOfThree(0, 3, -1), 3)
+  t.is(maxOfThree(10, 3, 50), 50)
+  t.is(maxOfThree(-1, -3, -10), -1)
+  t.is(maxOfThree('aaa', 0, 1), 1)
+  t.true(isNaN(maxOfThree('aaa', 'bbb', 'ccc')))
+})
 
 test('sum()', t => {
   t.is(sum(8, 11), 19)
