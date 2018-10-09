@@ -83,17 +83,21 @@ const isVowel = a => {
  * return the string "tothohisos isos fofunon".
  */
 
-const rovarspraket = string => {
-  let stringArray = string.split('')
-  let out = ''
-  stringArray.forEach(letter => {
-    if (out !== 'aeiou'.indexOf(letter)) {
-      out += letter
-    } else {
-      out += letter + 'o' + letter
-    }
-  })
-  return out
+function rovarspraket(x) {
+  if (isNaN(x)) {
+    let x2 = x.split('')
+    let x3 = ''
+    x2.forEach(function(letter) {
+      if (!!~'aeiou'.indexOf(letter)) {
+        x3 += letter
+      } else {
+        x3 += letter + 'o' + letter
+      }
+    })
+    return x3
+  } else {
+    return x.toString()
+  }
 }
 
 /**
